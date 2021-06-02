@@ -15,7 +15,7 @@ struct cbuf_t {
 
 static void advance_pointer(cbuf_handle_t cbuf) {
     assert(cbuf);
-    if(circular_buf_full(cbuf)) {
+    if(cbuf_full(cbuf)) {
         cbuf->tail = (cbuf->tail + 1) % cbuf->max;
     }
     cbuf->head = (cbuf->head + 1) % cbuf->max;
