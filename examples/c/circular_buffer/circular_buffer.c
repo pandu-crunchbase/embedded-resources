@@ -5,7 +5,6 @@
 
 #include "cbuf.h"
 
-// The definition of our circular buffer structure is hidden from the user
 struct cbuf_t {
     uint8_t * buffer;
     size_t head;
