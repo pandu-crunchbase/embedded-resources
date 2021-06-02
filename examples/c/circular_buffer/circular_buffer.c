@@ -3,18 +3,16 @@
 #include <stddef.h>
 #include <assert.h>
 
-#include "circular_buffer.h"
+#include "cbuf.h"
 
 // The definition of our circular buffer structure is hidden from the user
-struct circular_buf_t {
+struct cbuf_t {
     uint8_t * buffer;
     size_t head;
     size_t tail;
-    size_t max; //of the buffer
+    size_t max;
     bool full;
 };
-
-#pragma mark - Private Functions -
 
 static void advance_pointer(cbuf_handle_t cbuf) {
     assert(cbuf);
